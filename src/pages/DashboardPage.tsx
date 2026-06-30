@@ -80,7 +80,6 @@ const CONFIDENCE_BANDS = [
 export function DashboardPage() {
   const { metrics, decisions, currentUser } = useRiskStore()
   const navigate = useNavigate()
-  const [now] = useState(() => Date.now())
 
   const canSeeWorkbench = currentUser?.permissions?.includes("/workbench") ?? false
 
@@ -197,7 +196,7 @@ export function DashboardPage() {
                 <YAxis hide domain={[0, "dataMax + 200"]} />
                 <Tooltip
                   contentStyle={{ borderRadius: 4, border: "1px solid #ececf1", fontSize: 12 }}
-                  formatter={(value: number) => [`${value.toLocaleString()} signals`, "Compounding Memory"]}
+                  formatter={(value) => [`${Number(value).toLocaleString()} signals`, "Compounding Memory"]}
                 />
                 <Area type="monotone" dataKey="signals" stroke="#6366f1" strokeWidth={2} fill="url(#memoryGradient)" />
               </AreaChart>
