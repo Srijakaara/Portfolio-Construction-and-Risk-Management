@@ -1,0 +1,98 @@
+@import "@heroui/styles";
+
+@custom-variant dark (&:is(.dark *));
+
+:root,
+.light {
+  /* fintech tokens */
+  --radius: 0.75rem;
+  --background: #fafafb;
+  --foreground: oklch(0.21 0.006 285.89);
+  --surface: #ffffff;
+  --surface-foreground: var(--foreground);
+  --border: #ececf1;
+  --separator: #ececf1;
+  --muted: oklch(0.55 0.014 285.94);
+
+  --accent: #6366f1;
+  --accent-foreground: #ffffff;
+  --accent-hover: #4f46e5;
+  --link: #4f46e5;
+  --focus: #6366f1;
+
+  --success: #10b981;
+  --success-foreground: #ffffff;
+  --warning: #f59e0b;
+  --warning-foreground: #1f1500;
+  --danger: #f43f5e;
+  --danger-foreground: #ffffff;
+
+  /* card tokens used by shadcn-style Card primitive */
+  --card: var(--surface);
+  --card-foreground: var(--surface-foreground);
+  --primary: var(--accent);
+  --primary-foreground: var(--accent-foreground);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --input: var(--border);
+  --ring: var(--accent);
+  --destructive: var(--danger);
+}
+
+body {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .hairline {
+    border-color: var(--border);
+  }
+
+  .surface-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+  }
+
+  .nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .focus-ring {
+    @apply outline-none ring-2 ring-offset-0 transition-shadow;
+    --tw-ring-color: color-mix(in oklch, var(--accent) 40%, transparent);
+  }
+
+  .focus-ring:focus-visible {
+    border-color: var(--accent);
+  }
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 28s linear infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
