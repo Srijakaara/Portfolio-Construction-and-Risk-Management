@@ -76,7 +76,7 @@ export function WorkbenchPage() {
   const pendingCount = decisions.filter((d) => d.status === "pending").length
 
   return (
-    <div className="space-y-7 px-8 py-6">
+    <div className="space-y-7 px-4 py-5 sm:px-6 lg:px-8 lg:py-6">
       <Header
         title="Operational Workbench"
         subtitle="Human-in-the-loop review queue for AI-proposed actions."
@@ -140,6 +140,7 @@ export function WorkbenchPage() {
         </Card>
       ) : (
         <Card variant="transparent" className="surface-card overflow-hidden p-0">
+          <div className="overflow-x-auto">
           <table className="w-full text-left text-[12.5px]">
             <thead>
               <tr className="border-b hairline text-[11px] font-medium uppercase tracking-wide text-slate-400">
@@ -198,6 +199,7 @@ export function WorkbenchPage() {
               })}
             </tbody>
           </table>
+          </div>
         </Card>
       )}
     </div>

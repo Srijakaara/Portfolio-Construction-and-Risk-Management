@@ -94,8 +94,8 @@ export function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background p-6">
-      <div className="w-full max-w-md rounded-2xl bg-surface p-8 shadow-lg">
+    <div className="flex min-h-screen items-center justify-center bg-background p-4 sm:p-6">
+      <div className="w-full max-w-md rounded-2xl bg-surface p-5 sm:p-8 shadow-lg">
         <div className="mb-8 flex items-center gap-3">
           <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#6366f1] text-white shadow-sm">
             <ShieldCheck size={20} />

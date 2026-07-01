@@ -145,7 +145,7 @@ export function IntegrationsPage() {
   const degraded = INTEGRATIONS.filter((i) => i.status !== "healthy").length
 
   return (
-    <div className="space-y-7 px-8 py-6">
+    <div className="space-y-7 px-4 py-5 sm:px-6 lg:px-8 lg:py-6">
       <Header
         title="Integrations"
         subtitle="Live health for every system Ascend Risk AI depends on."
@@ -167,7 +167,7 @@ export function IntegrationsPage() {
         }
       />
 
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
         <StatCard label="Total Systems" value={<span className="nums">{total}</span>} />
         <StatCard
           label="Healthy"

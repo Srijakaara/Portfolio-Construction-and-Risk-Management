@@ -50,7 +50,7 @@ export function AuditDetailPage() {
   if (!decision) {
     const stillLoading = decisions.length === 0
     return (
-      <div className="space-y-5 px-8 py-6">
+      <div className="space-y-5 px-4 py-5 sm:px-6 lg:px-8 lg:py-6">
         <Header
           title="Decision Replay"
           subtitle="Full audit trail — read only"
@@ -129,7 +129,7 @@ export function AuditDetailPage() {
   ]
 
   return (
-    <div className="space-y-5 px-8 py-6">
+    <div className="space-y-5 px-4 py-5 sm:px-6 lg:px-8 lg:py-6">
       <Header
         title={`Replay: ${decision.id}`}
         subtitle="Full audit trail — read only"

@@ -63,7 +63,7 @@ export function AuditorPage() {
   const humanReviewed = decisions.length - autoApproved
 
   return (
-    <div className="space-y-7 px-8 py-6">
+    <div className="space-y-7 px-4 py-5 sm:px-6 lg:px-8 lg:py-6">
       <Header
         title="Auditor Console"
         subtitle="Immutable, replayable record of every resolved AI decision and the human action taken on it."

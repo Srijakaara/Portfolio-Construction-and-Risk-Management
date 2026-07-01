@@ -40,7 +40,7 @@ export function AdminPage() {
   const navigate = useNavigate()
 
   return (
-    <div className="space-y-7 px-8 py-6">
+    <div className="space-y-7 px-4 py-5 sm:px-6 lg:px-8 lg:py-6">
       <Header
         title="Admin Console"
         subtitle="Manage AI autonomy, system integrations, and model governance."

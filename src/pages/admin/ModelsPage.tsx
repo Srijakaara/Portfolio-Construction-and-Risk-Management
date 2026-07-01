@@ -99,7 +99,7 @@ export function ModelsPage() {
   }, [])
 
   return (
-    <div className="space-y-7 px-8 py-6">
+    <div className="space-y-7 px-4 py-5 sm:px-6 lg:px-8 lg:py-6">
       <Header
         title="AI Model Registry"
         subtitle="Governance record for every model in production, shadow, or retired."

@@ -7,7 +7,7 @@ export function AccessDeniedPage() {
   const currentUser = useRiskStore((s) => s.currentUser)
 
   return (
-    <div className="flex flex-col items-center justify-center text-center py-24 animate-in fade-in duration-500">
+    <div className="flex flex-col items-center justify-center text-center px-4 py-16 sm:py-24 animate-in fade-in duration-500">
       <div className="p-4 rounded-full bg-rose-50 dark:bg-rose-500/10 mb-4">
         <ShieldAlert className="w-8 h-8 text-rose-600 dark:text-rose-400" />
       </div>

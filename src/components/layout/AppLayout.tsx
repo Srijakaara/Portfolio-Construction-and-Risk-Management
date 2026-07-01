@@ -8,6 +8,7 @@ import { useRiskStore } from "@/store/useRiskStore"
 export function AppLayout() {
   const navigate = useNavigate()
   const [collapsed, setCollapsed] = useState(false)
+  const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const currentUser = useRiskStore((s) => s.currentUser)
   const logout = useRiskStore((s) => s.logout)
   const decisions = useRiskStore((s) => s.decisions)
@@ -48,7 +49,13 @@ export function AppLayout() {
   return (
     <div className="flex h-screen flex-col overflow-hidden bg-[#fafafb]">
       <div className="flex min-h-0 flex-1">
-        <Sidebar collapsed={collapsed} onToggle={() => setCollapsed((v) => !v)} currentUser={currentUser} />
+        <Sidebar
+          collapsed={collapsed}
+          onToggle={() => setCollapsed((v) => !v)}
+          currentUser={currentUser}
+          mobileOpen={mobileNavOpen}
+          onMobileClose={() => setMobileNavOpen(false)}
+        />
         <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
           <Topbar
             currentUser={currentUser}
@@ -57,6 +64,7 @@ export function AppLayout() {
             onNotificationClick={(target) => navigate(target)}
             onSelectDecision={(id) => navigate(canSee("/auditor") ? `/audit/${id}` : "/workbench")}
             onLogout={handleLogout}
+            onMenuClick={() => setMobileNavOpen((v) => !v)}
           />
           <main className="flex-1 overflow-y-auto">
             <Outlet />

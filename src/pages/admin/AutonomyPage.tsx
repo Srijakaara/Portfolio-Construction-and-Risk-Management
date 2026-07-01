@@ -82,7 +82,7 @@ export function AutonomyPage() {
   }
 
   return (
-    <div className="space-y-7 px-8 py-6">
+    <div className="space-y-7 px-4 py-5 sm:px-6 lg:px-8 lg:py-6">
       <Header
         title="Autonomy Envelope"
         subtitle="Configure when AI proposals can resolve without human sign-off."

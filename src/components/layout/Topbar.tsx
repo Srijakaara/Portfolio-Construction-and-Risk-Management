@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react"
-import { Search, RefreshCw, Bell, LogOut } from "lucide-react"
+import { Search, RefreshCw, Bell, LogOut, Menu } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -38,6 +38,7 @@ interface TopbarProps {
   onNotificationClick: (target: string) => void
   onSelectDecision: (id: string) => void
   onLogout: () => void
+  onMenuClick?: () => void
 }
 
 export function Topbar({
@@ -47,6 +48,7 @@ export function Topbar({
   onNotificationClick,
   onSelectDecision,
   onLogout,
+  onMenuClick,
 }: TopbarProps) {
   const unreadCount = notifications.length
   const [query, setQuery] = useState("")
@@ -100,8 +102,16 @@ export function Topbar({
   }
 
   return (
-    <header className="relative z-30 flex h-14 shrink-0 items-center gap-3 border-b hairline bg-white/80 px-5 backdrop-blur-md">
-      <div ref={containerRef} className="relative w-full max-w-sm">
+    <header className="relative z-30 flex h-14 shrink-0 items-center gap-2 border-b hairline bg-white/80 px-3 backdrop-blur-md sm:gap-3 sm:px-5">
+      <button
+        type="button"
+        onClick={onMenuClick}
+        className={cn(ICON_BUTTON_CLASS, "shrink-0 lg:hidden")}
+        aria-label="Toggle navigation menu"
+      >
+        <Menu className="h-4 w-4" />
+      </button>
+      <div ref={containerRef} className="relative w-full max-w-sm min-w-0">
         <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
         <input
           ref={inputRef}
